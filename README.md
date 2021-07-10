@@ -6,7 +6,7 @@ A simple URL Shortner web application made with Node js, Express js, Mongo DB & 
 Node.js
 Express.js
 MongoDB
-HTML
+EJS
 CSS
 Bootstrap 4
 ```
