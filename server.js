@@ -2,11 +2,13 @@ const express = require('express');
 const mongoose = require('mongoose');
 const urlModel = require('./models/urlModel');
 const TinyUrl = require('tinyurl');
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 4000;
+const URL = process.env.MONGODB_URL;
 
-mongoose.connect('mongodb+srv://user:user1234@db.8rr5i.mongodb.net/DB?retryWrites=true&w=majority', {
+mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log("Database connected!"))
@@ -48,6 +50,6 @@ app.post('/shortUrl', async (req, res) => {
 
 })
 
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log(`sever is running on port: ${port}`)
 })
