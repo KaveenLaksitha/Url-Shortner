@@ -6,7 +6,7 @@ const TinyUrl = require('tinyurl');
 const app = express();
 const port = process.env.PORT || 4000;
 
-mongoose.connect('mongodb://localhost/urlShortner', {
+mongoose.connect('mongodb+srv://user:user1234@db.8rr5i.mongodb.net/DB?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(() => console.log("Database connected!"))
