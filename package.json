@@ -1,9 +1,12 @@
 {
+  "homepage": "http://KaveenLaksitha.github.io/Url-Shortner",
   "name": "url-shortner",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
+    "predeploy":"npm run build",
+    "deploy":"gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js"
   },
@@ -13,6 +16,7 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "gh-pages": "^3.2.3",
     "mongoose": "^5.13.2",
     "tinyurl": "^1.1.7"
   },
