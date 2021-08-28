@@ -4,7 +4,7 @@ const urlModel = require('./models/urlModel');
 const TinyUrl = require('tinyurl');
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
 mongoose.connect('mongodb://localhost/urlShortner', {
     useNewUrlParser: true,
