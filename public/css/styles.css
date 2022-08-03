@@ -152,3 +152,11 @@ a {
     border-radius: 50%;
   }
 }
+
+.original-link {
+  display: block;
+  white-space: nowrap;
+  width: 20rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

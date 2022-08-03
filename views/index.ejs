@@ -1,73 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../public/css/styles.css" />
-    <title>URL Shortner</title>
-  </head>
-  <body>
-    <div class="area">
-      <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </div>
 
-    <div class="container">
-      <h1 class="header text-center">URL SHORTNER</h1>
-      <form action="/shortUrl" method="POST" class="form form-inline my-4">
-        <label for="inputUrl" class="sr-only">URL</label>
-        <input
-          type="url"
-          name="inputUrl"
-          id="inputUrl"
-          placeholder="url"
-          class="form-control mr-2 col"
-          required
-        />
-        <button type="submit" class="btn btn-large">Shorten!</button>
-      </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../public/css/styles.css" />
+  <title>URL Shortner</title>
+</head>
 
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>original url</th>
-            <th>shortened url</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% shortUrls.forEach(urlModel => {%>
+<body>
+  <div class="area">
+    <ul class="circles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <div class="container">
+    <h1 class="header text-center">URL SHORTNER</h1>
+    <form action="/shortUrl" method="POST" class="form form-inline my-4">
+      <label for="inputUrl" class="sr-only">URL</label>
+      <input type="url" name="inputUrl" id="inputUrl" placeholder="url" class="form-control mr-2 col" required />
+      <button type="submit" class="btn btn-large">Shorten!</button>
+    </form>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>original url</th>
+          <th>shortened url</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% shortUrls.forEach(urlModel=> {%>
           <tr>
             <td>
-              <a href="<%= urlModel.original %>" target="_blank"
-                ><%= urlModel.original %></a
-              >
+              <a href="<%= urlModel.original %>" target="_blank" class="original-link">
+                <%= urlModel.original %>
+              </a>
             </td>
             <td>
-              <a href="<%= urlModel.short %>" target="_blank"
-                ><%= urlModel.short %></a
-              >
+              <a href="<%= urlModel.short %>" target="_blank">
+                <%= urlModel.short %>
+              </a>
             </td>
           </tr>
           <%}) %>
-        </tbody>
-      </table>
-    </div>
-  </body>
+      </tbody>
+    </table>
+  </div>
+</body>
+
 </html>
