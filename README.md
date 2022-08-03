@@ -13,7 +13,7 @@ Bootstrap 4
 
 ### Running Locally
 
-Make sure you have installed Node.js and MongoDB Community Server on your computer.
+Make sure you have installed Node.js and MongoDB Community Server on your computer. Also add MongoDB URL to env file after cloning the project.
 ```
 git clone https://github.com/KaveenLaksitha/Url-Shortner.git # or clone your own fork
 cd Url-Shortner
